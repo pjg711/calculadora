@@ -1,0 +1,14 @@
+	<div ng-controller="calculadoraController">
+		<form novalidate style="clear:both"> <!-- novalidate usado para que angularjs no valide -->
+			<input name="email" type="text" ng-model="resultado" readonly/>
+			<ul>
+				<li ng-repeat="n in '123+456-789*/0C='.split('')"
+					ng-class="{corte:($index % 4 === 0)}">
+					<button ng-click="tecla(n)">
+						{{n}}
+					</button>
+				</li>
+			</ul>
+			<button type="submit" ng-click="calcular()">Calcular!</button>
+		</form>
+	</div>
